@@ -17,11 +17,14 @@ public class Main {
         String fileName = args[0];
 
         try {
+                        
             // Parse the UML file
             File umlFile = new File(fileName);
             DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
             Document doc = dBuilder.parse(umlFile);
+            System.out.println("Parsed pseudo code:");
+            System.out.println(doc);
 
             // Convert the UML file to pseudo-code
             StringBuilder pseudoCode = new StringBuilder();
@@ -66,7 +69,7 @@ public class Main {
             }
 
             // Write the pseudo-code to the output file
-            File outputFile = new File("pseudo.txt");
+            File outputFile = new File("pseudo_.txt");
             FileWriter writer = new FileWriter(outputFile);
             writer.write(pseudoCode.toString());
             writer.flush(); // flush the buffer
