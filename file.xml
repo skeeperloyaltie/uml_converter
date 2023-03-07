@@ -1,41 +1,60 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.omg.org/spec/UML/20131001">
-  <uml:Class name="Customer">
-    <uml:Attribute name="id" visibility="private" type="int"/>
-    <uml:Attribute name="name" visibility="private" type="String"/>
-    <uml:Attribute name="email" visibility="private" type="String"/>
-    <uml:Operation name="Customer" visibility="public">
-      <uml:Parameter name="id" direction="in" type="int"/>
-      <uml:Parameter name="name" direction="in" type="String"/>
-      <uml:Parameter name="email" direction="in" type="String"/>
-    </uml:Operation>
-    <uml:Operation name="getId" visibility="public" type="int"/>
-    <uml:Operation name="getName" visibility="public" type="String"/>
-    <uml:Operation name="getEmail" visibility="public" type="String"/>
-    <uml:Operation name="setName" visibility="public">
-      <uml:Parameter name="name" direction="in" type="String"/>
-    </uml:Operation>
-    <uml:Operation name="setEmail" visibility="public">
-      <uml:Parameter name="email" direction="in" type="String"/>
-    </uml:Operation>
-  </uml:Class>
-  <uml:Class name="Order">
-    <uml:Attribute name="id" visibility="private" type="int"/>
-    <uml:Attribute name="status" visibility="private" type="String"/>
-    <uml:Attribute name="customer" visibility="private" type="Customer"/>
-    <uml:Operation name="Order" visibility="public">
-      <uml:Parameter name="id" direction="in" type="int"/>
-      <uml:Parameter name="status" direction="in" type="String"/>
-      <uml:Parameter name="customer" direction="in" type="Customer"/>
-    </uml:Operation>
-    <uml:Operation name="getId" visibility="public" type="int"/>
-    <uml:Operation name="getStatus" visibility="public" type="String"/>
-    <uml:Operation name="getCustomer" visibility="public" type="Customer"/>
-    <uml:Operation name="setStatus" visibility="public">
-      <uml:Parameter name="status" direction="in" type="String"/>
-    </uml:Operation>
-    <uml:Operation name="setCustomer" visibility="public">
-      <uml:Parameter name="customer" direction="in" type="Customer"/>
-    </uml:Operation>
-  </uml:Class>
-</uml:Model>
+<mxGraphModel>
+  <root>
+    <Diagram id="0">
+      <mxCell />
+      <mxCell />
+      <object id="3" label="Employee" type="UMLClass">
+        <mxCell style="shape=umlClass;whiteSpace=wrap;html=1;" vertex="1">
+          <mxGeometry x="120" y="80" width="80" height="80" as="geometry" />
+        </mxCell>
+        <Attribute name="firstName" type="String" />
+        <Attribute name="lastName" type="String" />
+        <Attribute name="age" type="int" />
+        <Method name="getFullName">
+          <Parameter name="firstName" type="String" />
+          <Parameter name="lastName" type="String" />
+          <mxCell style="endArrow=none;dashed=0;endFill=0;html=1;" parent="3" vertex="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </Method>
+        <Method name="getAge">
+          <mxCell style="endArrow=none;dashed=0;endFill=0;html=1;" parent="3" vertex="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </Method>
+      </object>
+      <object id="4" label="Person" type="UMLClass">
+        <mxCell style="shape=umlClass;whiteSpace=wrap;html=1;" vertex="1">
+          <mxGeometry x="400" y="80" width="80" height="80" as="geometry" />
+        </mxCell>
+        <Attribute name="firstName" type="String" />
+        <Attribute name="lastName" type="String" />
+        <Method name="getFullName">
+          <Parameter name="firstName" type="String" />
+          <Parameter name="lastName" type="String" />
+          <mxCell style="endArrow=none;dashed=0;endFill=0;html=1;" parent="4" vertex="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </Method>
+      </object>
+      <object id="5" label="Serializable" type="UMLInterface">
+        <mxCell style="shape=interface;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;" vertex="1">
+          <mxGeometry x="288" y="288" width="120" height="40" as="geometry" />
+        </mxCell>
+        <Operation name="serialize">
+          <Parameter name="outputStream" type="OutputStream" />
+          <mxCell style="endArrow=none;dashed=0;endFill=0;html=1;" parent="5" vertex="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </Operation>
+        <Operation name="deserialize">
+          <Parameter name="inputStream" type="InputStream" />
+          <mxCell style="endArrow=none;dashed=0;endFill=0;html=1;" parent="5" vertex="1">
+            <mxGeometry relative="1" as="geometry" />
+          </mxCell>
+        </Operation>
+      </object>
+      <mxCell />
+    </Diagram>
+  </root>
+</mxGraphModel>
