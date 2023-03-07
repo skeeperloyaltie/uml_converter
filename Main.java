@@ -69,7 +69,8 @@ public class Main {
             File outputFile = new File("pseudo.txt");
             FileWriter writer = new FileWriter(outputFile);
             writer.write(pseudoCode.toString());
-            writer.close();
+            writer.flush(); // flush the buffer
+            writer.close(); // close the file
         } catch (Exception e) {
             System.err.println("Error parsing UML file: " + e.getMessage());
             System.exit(1);
